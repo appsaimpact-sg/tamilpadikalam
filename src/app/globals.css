@@ -1,0 +1,189 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Tamil:wght@300;400;500;600;700&family=Noto+Serif+Tamil:ital,wght@0,400;0,600;0,700;1,400&family=Lora:ital,wght@0,400;0,600;1,400&family=DM+Mono:wght@400;500&display=swap');
+
+:root {
+  --ink: #5F27CD;
+  --ink2: #663399;
+  --muted: #A29BFE;
+  --muted2: #DDA0DD;
+  --bg: #FFF9E6;
+  --bg2: #FFE8D6;
+  --bg3: #FFD4AC;
+  --accent: #FF6B6B;
+  --accent2: #FF8E72;
+  --teal: #00B894;
+  --teal2: #E8F8F5;
+  --gold: #F39C12;
+  --gold2: #FFFAED;
+  --border: #E8D7C3;
+  --border2: #F0E6D2;
+  --sg-bg: #FFF4E6;
+  --sg-border: #FFD89B;
+  --header-bg: #E6D7F0;
+  --header-text: #5F27CD;
+  --header-border: #F39C12;
+  --radius: 12px;
+  --shadow: 0 2px 12px rgba(95,39,205,0.08);
+  --shadow-md: 0 8px 32px rgba(95,39,205,0.14);
+}
+
+* { box-sizing: border-box; }
+
+body {
+  font-family: 'Lora', Georgia, serif;
+  background: var(--bg);
+  color: var(--ink);
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+}
+
+.tamil { font-family: 'Noto Sans Tamil', sans-serif; }
+.tamil-serif { font-family: 'Noto Serif Tamil', serif; }
+.mono { font-family: 'DM Mono', monospace; }
+
+/* Difficulty dots on examples */
+.dot {
+  display: inline-block;
+  width: 7px; height: 7px;
+  border-radius: 50%;
+  margin-right: 6px;
+  flex-shrink: 0;
+}
+.dot-easy   { background: var(--teal); }
+.dot-medium { background: var(--gold); }
+.dot-hard   { background: var(--accent); }
+
+/* SG badge */
+.sg-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  background: var(--sg-bg);
+  border: 1px solid var(--sg-border);
+  border-radius: 99px;
+  color: var(--accent);
+  font-size: 10px;
+  font-family: 'DM Mono', monospace;
+  padding: 2px 9px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+/* Tag pill */
+.tag-pill {
+  background: var(--bg2);
+  border-radius: 4px;
+  color: var(--muted);
+  font-size: 10px;
+  font-family: 'DM Mono', monospace;
+  padding: 2px 7px;
+}
+
+/* Word card */
+.word-card {
+  background: white;
+  border: 1px solid var(--border2);
+  border-radius: var(--radius);
+  padding: 20px;
+  cursor: pointer;
+  transition: all 0.18s;
+  position: relative;
+  overflow: hidden;
+}
+.word-card::before {
+  content: '';
+  position: absolute;
+  left: 0; top: 0; bottom: 0;
+  width: 4px;
+  background: var(--teal);
+  opacity: 0;
+  transition: opacity 0.18s;
+}
+.word-card:hover { border-color: var(--border); box-shadow: var(--shadow); transform: translateY(-1px); }
+.word-card:hover::before { opacity: 1; }
+.word-card.sg::before { background: var(--accent); opacity: 1; }
+
+/* Sorporul card */
+.sorporul-card {
+  background: white;
+  border: 1px solid var(--border2);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+
+/* Synonym row */
+.synonym-row {
+  border: 1px solid var(--border2);
+  border-radius: 10px;
+  margin-bottom: 10px;
+  overflow: hidden;
+  transition: border-color 0.15s;
+}
+.synonym-row:last-child { margin-bottom: 0; }
+.synonym-row:hover { border-color: var(--gold); }
+
+/* Hero */
+.hero {
+  background: var(--ink2);
+  border-radius: var(--radius);
+  padding: 28px 32px;
+  margin-bottom: 28px;
+}
+
+/* Section label */
+.section-label {
+  font-family: 'DM Mono', monospace;
+  font-size: 10px;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+.section-label::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: var(--border2);
+}
+
+/* Filter button */
+.filter-btn {
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  border-radius: 99px;
+  color: var(--muted);
+  cursor: pointer;
+  font-family: 'Lora', serif;
+  font-size: 12px;
+  padding: 5px 14px;
+  transition: all 0.15s;
+}
+.filter-btn:hover { border-color: var(--accent2); color: var(--accent); }
+.filter-btn.active { background: var(--accent); border-color: var(--accent); color: white; }
+
+/* Meaning box */
+.meaning-box {
+  background: var(--teal2);
+  border-radius: 10px;
+  padding: 14px 16px;
+  margin-bottom: 10px;
+}
+
+/* Example item */
+.example-item {
+  border-left: 3px solid var(--border);
+  padding: 10px 14px;
+  margin-bottom: 8px;
+  background: white;
+  border-radius: 0 8px 8px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.example-item:last-child { margin-bottom: 0; }

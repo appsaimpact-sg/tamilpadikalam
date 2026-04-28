@@ -1,0 +1,222 @@
+[
+  {
+    "id": "w001",
+    "english_text": "MRT",
+    "tamil_text": "நகர் ரயில்",
+    "transliteration": "nagar rayil",
+    "meaning_tamil": "சிங்கப்பூரில் உள்ள நிலத்தடி மற்றும் மேம்பாலம் ரயில் சேவை",
+    "meaning_english": "Mass Rapid Transit — Singapore's underground and elevated train system",
+    "sg_context": true,
+    "tags": ["transport", "singapore", "daily-life"],
+    "examples": [
+      {
+        "tamil": "நாங்கள் தினமும் MRT ரயிலில் பள்ளிக்குச் செல்கிறோம்.",
+        "english": "We go to school by MRT every day.",
+        "difficulty": "easy"
+      },
+      {
+        "tamil": "புகைவண்டி நிலையம் மிகவும் நெரிசலாக இருந்தது.",
+        "english": "The train station was very crowded.",
+        "difficulty": "medium"
+      }
+    ]
+  },
+  {
+    "id": "w002",
+    "english_text": "zebra crossing",
+    "tamil_text": "வரிக்குதிரை கடவை",
+    "transliteration": "varikuthirai kadavai",
+    "meaning_tamil": "வாகனங்கள் நிறுத்தப்படும்போது மக்கள் சாலையைக் கடக்கும் வரிக்கோடுகள் கொண்ட இடம்",
+    "meaning_english": "A marked pedestrian crossing where vehicles must stop to let people cross",
+    "sg_context": true,
+    "tags": ["transport", "singapore", "safety"],
+    "examples": [
+      {
+        "tamil": "வரிக்குதிரை கடவையில் மட்டுமே சாலையைக் கடக்க வேண்டும்.",
+        "english": "You must cross the road only at the zebra crossing.",
+        "difficulty": "easy"
+      },
+      {
+        "tamil": "வாகன ஓட்டிகள் வரிக்குதிரை கடவையில் நடைபயணிகளுக்கு வழிவிட வேண்டும்.",
+        "english": "Drivers must give way to pedestrians at the zebra crossing.",
+        "difficulty": "medium"
+      }
+    ]
+  },
+  {
+    "id": "w003",
+    "english_text": "hawker centre",
+    "tamil_text": "தின்பண்ட சந்தை",
+    "transliteration": "thinpanda sandhai",
+    "meaning_tamil": "சிங்கப்பூரில் பல்வேறு உணவு கடைகள் ஒரே இடத்தில் இருக்கும் பொது உணவு மையம்",
+    "meaning_english": "An open-air food court in Singapore with many stalls selling affordable local food",
+    "sg_context": true,
+    "tags": ["food", "singapore", "culture"],
+    "examples": [
+      {
+        "tamil": "அம்மா தின்பண்ட சந்தையில் இருந்து சாதம் வாங்கி வந்தார்.",
+        "english": "Mum bought rice from the hawker centre.",
+        "difficulty": "easy"
+      },
+      {
+        "tamil": "சிங்கப்பூரின் தின்பண்ட சந்தைகள் யுனெஸ்கோவால் பாரம்பரியமாக அங்கீகரிக்கப்பட்டுள்ளன.",
+        "english": "Singapore's hawker centres have been recognised as heritage by UNESCO.",
+        "difficulty": "hard"
+      }
+    ]
+  },
+  {
+    "id": "w004",
+    "english_text": "friendship",
+    "tamil_text": "நட்பு",
+    "transliteration": "natpu",
+    "meaning_tamil": "இரண்டு அல்லது அதிக நபர்களிடையே உள்ள அன்பான, நம்பகமான உறவு",
+    "meaning_english": "A close, trusting and affectionate relationship between people",
+    "sg_context": false,
+    "tags": ["values", "relationships", "psle-core"],
+    "examples": [
+      {
+        "tamil": "உண்மையான நட்பு கஷ்ட காலத்தில் தெரியும்.",
+        "english": "True friendship is known in times of difficulty.",
+        "difficulty": "medium"
+      },
+      {
+        "tamil": "அவர்களின் நட்பு பல ஆண்டுகளாக நீடிக்கிறது.",
+        "english": "Their friendship has lasted for many years.",
+        "difficulty": "easy"
+      }
+    ]
+  },
+  {
+    "id": "w005",
+    "english_text": "kindness",
+    "tamil_text": "இரக்கம்",
+    "transliteration": "irakkam",
+    "meaning_tamil": "பிறரின் துன்பத்தைக் கண்டு மனம் இளகி உதவும் நல்ல குணம்",
+    "meaning_english": "The quality of being caring and helpful to others who are in need",
+    "sg_context": false,
+    "tags": ["values", "character", "psle-core"],
+    "examples": [
+      {
+        "tamil": "அவள் இரக்கத்துடன் வயதான பெண்மணிக்கு உதவினாள்.",
+        "english": "She helped the elderly woman with kindness.",
+        "difficulty": "easy"
+      },
+      {
+        "tamil": "இரக்கம் என்பது வார்த்தையில் மட்டுமல்ல, செயலில் காட்ட வேண்டும்.",
+        "english": "Kindness must be shown not just in words but in deeds.",
+        "difficulty": "medium"
+      }
+    ]
+  },
+  {
+    "id": "w006",
+    "english_text": "courage",
+    "tamil_text": "தைரியம்",
+    "transliteration": "thairiyam",
+    "meaning_tamil": "அச்சமின்றி சவால்களை எதிர்கொள்ளும் மன உறுதி",
+    "meaning_english": "The mental strength to face challenges and difficulties without fear",
+    "sg_context": false,
+    "tags": ["values", "character", "psle-core"],
+    "examples": [
+      {
+        "tamil": "தைரியத்துடன் உண்மையைச் சொல்ல வேண்டும்.",
+        "english": "One must speak the truth with courage.",
+        "difficulty": "easy"
+      },
+      {
+        "tamil": "அவன் தைரியமாக நீரில் மூழ்கிய குழந்தையை காப்பாற்றினான்.",
+        "english": "He bravely rescued the child who had drowned in the water.",
+        "difficulty": "medium"
+      }
+    ]
+  },
+  {
+    "id": "w007",
+    "english_text": "education",
+    "tamil_text": "கல்வி",
+    "transliteration": "kalvi",
+    "meaning_tamil": "அறிவு, திறன் மற்றும் நற்பண்புகளை வளர்க்கும் கற்றல் செயல்முறை",
+    "meaning_english": "The process of gaining knowledge, skills and good values through learning",
+    "sg_context": false,
+    "tags": ["values", "learning", "psle-core"],
+    "examples": [
+      {
+        "tamil": "கல்வியே ஒரு மனிதனின் மிகப்பெரிய செல்வம்.",
+        "english": "Education is a person's greatest wealth.",
+        "difficulty": "easy"
+      },
+      {
+        "tamil": "கல்வி மட்டுமல்ல, நல்ல ஒழுக்கமும் வாழ்க்கையில் அவசியம்.",
+        "english": "Not just education, but good character is also necessary in life.",
+        "difficulty": "medium"
+      }
+    ]
+  },
+  {
+    "id": "w008",
+    "english_text": "void deck",
+    "tamil_text": "காலி மாடி",
+    "transliteration": "kaali maadi",
+    "meaning_tamil": "சிங்கப்பூர் HDB தொகுதி வீடுகளின் கீழ் மாடியில் உள்ள திறந்த வெளி இடம்",
+    "meaning_english": "The open ground floor of Singapore's HDB public housing blocks, used for community activities",
+    "sg_context": true,
+    "tags": ["singapore", "housing", "community"],
+    "examples": [
+      {
+        "tamil": "குழந்தைகள் காலி மாடியில் விளையாடுகிறார்கள்.",
+        "english": "Children are playing at the void deck.",
+        "difficulty": "easy"
+      },
+      {
+        "tamil": "காலி மாடியில் திருமண விழா நடைபெற்றது.",
+        "english": "A wedding ceremony took place at the void deck.",
+        "difficulty": "medium"
+      }
+    ]
+  },
+  {
+    "id": "w009",
+    "english_text": "respect",
+    "tamil_text": "மரியாதை",
+    "transliteration": "mariyaathai",
+    "meaning_tamil": "பெரியவர்கள் மற்றும் பிறரை மதிக்கும் நல்ல குணம்",
+    "meaning_english": "The quality of treating others with honour and consideration",
+    "sg_context": false,
+    "tags": ["values", "character", "psle-core"],
+    "examples": [
+      {
+        "tamil": "பெரியவர்களுக்கு மரியாதை கொடுப்பது நம் கடமை.",
+        "english": "It is our duty to show respect to elders.",
+        "difficulty": "easy"
+      },
+      {
+        "tamil": "மரியாதை கொடுப்பவர்களுக்கே மரியாதை கிடைக்கும்.",
+        "english": "Only those who give respect will receive respect.",
+        "difficulty": "medium"
+      }
+    ]
+  },
+  {
+    "id": "w010",
+    "english_text": "perseverance",
+    "tamil_text": "விடாமுயற்சி",
+    "transliteration": "vidaamuyarchi",
+    "meaning_tamil": "தோல்வியிலும் சோர்வடையாமல் தொடர்ந்து முயற்சிக்கும் குணம்",
+    "meaning_english": "The quality of continuing to try without giving up even when facing failure",
+    "sg_context": false,
+    "tags": ["values", "character", "psle-core"],
+    "examples": [
+      {
+        "tamil": "விடாமுயற்சியே வெற்றியின் சாவி.",
+        "english": "Perseverance is the key to success.",
+        "difficulty": "easy"
+      },
+      {
+        "tamil": "அவள் தோல்வியடைந்தாலும் விடாமுயற்சியுடன் தொடர்ந்து படித்தாள்.",
+        "english": "Even after failing, she continued to study with perseverance.",
+        "difficulty": "medium"
+      }
+    ]
+  }
+]

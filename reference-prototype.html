@@ -1,0 +1,711 @@
+<!DOCTYPE html>
+<html lang="ta">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>தமிழ் படிக்கலாம் — PSLE Tamil</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Tamil:wght@300;400;500;600;700&family=Noto+Serif+Tamil:wght@400;600&family=Lora:ital,wght@0,400;0,600;1,400&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #1a1208;
+    --ink2: #3d2e0f;
+    --muted: #8a7558;
+    --muted2: #b8a07a;
+    --bg: #faf6ef;
+    --bg2: #f2ead8;
+    --bg3: #e8dcc4;
+    --accent: #c85a1e;
+    --accent2: #e07a3a;
+    --teal: #1a7a6e;
+    --teal2: #e8f4f2;
+    --gold: #b88a20;
+    --gold2: #fdf4dc;
+    --border: #d4c4a0;
+    --border2: #e8dcc4;
+    --sg: #c85a1e;
+    --sg-bg: #fff4ee;
+    --sg-border: #f0c4a8;
+    --radius: 12px;
+    --shadow: 0 2px 12px rgba(26,18,8,0.08);
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Lora', Georgia, serif;
+    background: var(--bg);
+    color: var(--ink);
+    min-height: 100vh;
+    line-height: 1.7;
+  }
+
+  .tamil { font-family: 'Noto Sans Tamil', sans-serif; }
+  .tamil-serif { font-family: 'Noto Serif Tamil', serif; }
+  .mono { font-family: 'DM Mono', monospace; }
+
+  /* ── Header ── */
+  header {
+    background: var(--ink);
+    color: var(--bg);
+    padding: 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    border-bottom: 3px solid var(--accent);
+  }
+  .header-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 14px 24px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+  .logo {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.2;
+    flex-shrink: 0;
+  }
+  .logo-tamil {
+    font-family: 'Noto Serif Tamil', serif;
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--accent2);
+    letter-spacing: 0.02em;
+  }
+  .logo-english {
+    font-family: 'Lora', serif;
+    font-size: 11px;
+    color: var(--muted2);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+  .search-wrap {
+    flex: 1;
+    min-width: 200px;
+    position: relative;
+  }
+  .search-wrap input {
+    width: 100%;
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.18);
+    border-radius: 8px;
+    color: var(--bg);
+    font-family: 'Lora', serif;
+    font-size: 14px;
+    padding: 9px 14px 9px 38px;
+    outline: none;
+    transition: border-color 0.2s, background 0.2s;
+  }
+  .search-wrap input::placeholder { color: var(--muted2); }
+  .search-wrap input:focus {
+    border-color: var(--accent2);
+    background: rgba(255,255,255,0.12);
+  }
+  .search-icon {
+    position: absolute;
+    left: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--muted2);
+    font-size: 14px;
+    pointer-events: none;
+  }
+  nav { display: flex; gap: 4px; }
+  .nav-btn {
+    background: transparent;
+    border: 1px solid rgba(255,255,255,0.15);
+    border-radius: 7px;
+    color: var(--muted2);
+    cursor: pointer;
+    font-family: 'Lora', serif;
+    font-size: 13px;
+    padding: 7px 14px;
+    transition: all 0.15s;
+    white-space: nowrap;
+  }
+  .nav-btn:hover { border-color: rgba(255,255,255,0.3); color: var(--bg); }
+  .nav-btn.active { background: var(--accent); border-color: var(--accent); color: white; }
+
+  /* ── Layout ── */
+  main {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 32px 24px 80px;
+  }
+
+  .page { display: none; }
+  .page.active { display: block; }
+
+  /* ── Hero strip ── */
+  .hero {
+    background: var(--ink2);
+    border-radius: var(--radius);
+    padding: 28px 32px;
+    margin-bottom: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+  .hero-text h1 {
+    font-family: 'Noto Serif Tamil', serif;
+    font-size: 26px;
+    font-weight: 600;
+    color: var(--accent2);
+    margin-bottom: 4px;
+  }
+  .hero-text p { color: var(--muted2); font-size: 14px; }
+  .hero-stats { display: flex; gap: 20px; }
+  .stat { text-align: center; }
+  .stat-n { font-size: 28px; font-weight: 600; color: var(--bg); font-family: 'Lora', serif; }
+  .stat-l { font-size: 11px; color: var(--muted2); text-transform: uppercase; letter-spacing: 0.08em; }
+
+  /* ── Filter bar ── */
+  .filter-bar {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 24px;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+  .filter-label { font-size: 12px; color: var(--muted); margin-right: 4px; font-family: 'DM Mono', monospace; text-transform: uppercase; letter-spacing: 0.06em; }
+  .tag-btn {
+    background: var(--bg2);
+    border: 1px solid var(--border);
+    border-radius: 99px;
+    color: var(--muted);
+    cursor: pointer;
+    font-family: 'Lora', serif;
+    font-size: 12px;
+    padding: 5px 14px;
+    transition: all 0.15s;
+  }
+  .tag-btn:hover { border-color: var(--accent2); color: var(--accent); }
+  .tag-btn.active { background: var(--accent); border-color: var(--accent); color: white; }
+
+  /* ── Word Grid ── */
+  .word-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 16px;
+  }
+
+  /* ── Word Card ── */
+  .word-card {
+    background: white;
+    border: 1px solid var(--border2);
+    border-radius: var(--radius);
+    padding: 20px;
+    cursor: pointer;
+    transition: all 0.18s;
+    position: relative;
+    overflow: hidden;
+  }
+  .word-card::before {
+    content: '';
+    position: absolute;
+    left: 0; top: 0; bottom: 0;
+    width: 4px;
+    background: var(--teal);
+    border-radius: 2px 0 0 2px;
+    opacity: 0;
+    transition: opacity 0.18s;
+  }
+  .word-card:hover { border-color: var(--border); box-shadow: var(--shadow); transform: translateY(-1px); }
+  .word-card:hover::before { opacity: 1; }
+  .word-card.sg::before { background: var(--accent); opacity: 1; }
+
+  .sg-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    background: var(--sg-bg);
+    border: 1px solid var(--sg-border);
+    border-radius: 99px;
+    color: var(--sg);
+    font-size: 10px;
+    font-family: 'DM Mono', monospace;
+    padding: 2px 9px;
+    margin-bottom: 10px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+  .word-english {
+    font-size: 13px;
+    color: var(--muted);
+    font-family: 'DM Mono', monospace;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: 4px;
+  }
+  .word-tamil {
+    font-family: 'Noto Serif Tamil', serif;
+    font-size: 22px;
+    font-weight: 600;
+    color: var(--ink);
+    line-height: 1.3;
+    margin-bottom: 2px;
+  }
+  .word-roman {
+    font-size: 12px;
+    color: var(--muted2);
+    font-style: italic;
+    margin-bottom: 10px;
+  }
+  .word-meaning-preview {
+    font-size: 13px;
+    color: var(--ink2);
+    line-height: 1.6;
+    border-top: 1px solid var(--border2);
+    padding-top: 10px;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+  .word-tags { display: flex; gap: 5px; flex-wrap: wrap; margin-top: 10px; }
+  .word-tag {
+    background: var(--bg2);
+    border-radius: 4px;
+    color: var(--muted);
+    font-size: 10px;
+    font-family: 'DM Mono', monospace;
+    padding: 2px 7px;
+  }
+
+  /* ── Modal / Detail ── */
+  .detail-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(26,18,8,0.55);
+    z-index: 200;
+    overflow-y: auto;
+    padding: 32px 16px;
+  }
+  .detail-overlay.open { display: flex; align-items: flex-start; justify-content: center; }
+  .detail-box {
+    background: var(--bg);
+    border-radius: 16px;
+    max-width: 680px;
+    width: 100%;
+    overflow: hidden;
+    box-shadow: 0 20px 60px rgba(26,18,8,0.25);
+  }
+  .detail-header {
+    background: var(--ink);
+    padding: 24px 28px 20px;
+    position: relative;
+  }
+  .detail-close {
+    position: absolute;
+    top: 16px; right: 16px;
+    background: rgba(255,255,255,0.1);
+    border: none;
+    border-radius: 8px;
+    color: var(--muted2);
+    cursor: pointer;
+    font-size: 18px;
+    width: 32px; height: 32px;
+    display: flex; align-items: center; justify-content: center;
+    transition: background 0.15s;
+  }
+  .detail-close:hover { background: rgba(255,255,255,0.2); color: white; }
+  .detail-english { font-family: 'DM Mono', monospace; font-size: 11px; color: var(--muted2); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 6px; }
+  .detail-tamil-main { font-family: 'Noto Serif Tamil', serif; font-size: 36px; font-weight: 600; color: var(--accent2); line-height: 1.2; margin-bottom: 4px; }
+  .detail-roman { font-size: 14px; color: var(--muted2); font-style: italic; }
+  .detail-body { padding: 24px 28px; }
+  .detail-section { margin-bottom: 22px; }
+  .detail-section-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    margin-bottom: 8px;
+    display: flex; align-items: center; gap: 8px;
+  }
+  .detail-section-label::after { content: ''; flex: 1; height: 1px; background: var(--border2); }
+  .meaning-box {
+    background: var(--teal2);
+    border-radius: 10px;
+    padding: 14px 16px;
+    margin-bottom: 10px;
+  }
+  .meaning-tamil { font-family: 'Noto Sans Tamil', sans-serif; font-size: 15px; color: var(--teal); margin-bottom: 6px; }
+  .meaning-english { font-size: 14px; color: var(--ink2); }
+  .example-item {
+    border-left: 3px solid var(--border);
+    padding: 10px 14px;
+    margin-bottom: 8px;
+    background: white;
+    border-radius: 0 8px 8px 0;
+  }
+  .example-item:last-child { margin-bottom: 0; }
+  .example-tamil { font-family: 'Noto Sans Tamil', sans-serif; font-size: 15px; color: var(--ink); margin-bottom: 4px; }
+  .example-english { font-size: 13px; color: var(--muted); font-style: italic; }
+  .difficulty-dot {
+    display: inline-block;
+    width: 7px; height: 7px;
+    border-radius: 50%;
+    margin-right: 5px;
+  }
+  .difficulty-easy .difficulty-dot { background: var(--teal); }
+  .difficulty-medium .difficulty-dot { background: var(--gold); }
+  .difficulty-hard .difficulty-dot { background: var(--accent); }
+  .sg-note {
+    background: var(--sg-bg);
+    border: 1px solid var(--sg-border);
+    border-radius: 10px;
+    padding: 12px 16px;
+    display: flex;
+    gap: 10px;
+    align-items: flex-start;
+    font-size: 13px;
+    color: var(--ink2);
+  }
+  .sg-note-icon { color: var(--sg); font-size: 16px; flex-shrink: 0; margin-top: 2px; }
+
+  /* ── Sorporul ── */
+  .sorporul-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+    gap: 20px;
+  }
+  .sorporul-card {
+    background: white;
+    border: 1px solid var(--border2);
+    border-radius: var(--radius);
+    overflow: hidden;
+  }
+  .sorporul-header {
+    background: var(--gold2);
+    border-bottom: 1px solid var(--border);
+    padding: 16px 20px;
+  }
+  .sorporul-concept-en { font-family: 'DM Mono', monospace; font-size: 10px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 4px; }
+  .sorporul-concept-ta { font-family: 'Noto Serif Tamil', serif; font-size: 22px; font-weight: 600; color: var(--ink); }
+  .sorporul-concept-rom { font-size: 12px; color: var(--muted2); font-style: italic; margin-bottom: 8px; }
+  .sorporul-desc { font-size: 13px; color: var(--ink2); line-height: 1.6; }
+  .sorporul-synonyms { padding: 16px 20px; }
+  .synonym-row {
+    border: 1px solid var(--border2);
+    border-radius: 10px;
+    margin-bottom: 10px;
+    overflow: hidden;
+    transition: border-color 0.15s;
+  }
+  .synonym-row:last-child { margin-bottom: 0; }
+  .synonym-row:hover { border-color: var(--gold); }
+  .synonym-top {
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+    padding: 10px 14px 6px;
+    background: var(--bg2);
+    flex-wrap: wrap;
+  }
+  .synonym-word { font-family: 'Noto Serif Tamil', serif; font-size: 18px; font-weight: 600; color: var(--ink); }
+  .synonym-rom { font-size: 12px; color: var(--muted2); font-style: italic; }
+  .synonym-body { padding: 8px 14px 12px; }
+  .synonym-meaning { font-size: 13px; color: var(--ink); margin-bottom: 4px; font-weight: 500; }
+  .synonym-nuance { font-size: 12px; color: var(--muted); margin-bottom: 8px; font-style: italic; }
+  .synonym-example-ta { font-family: 'Noto Sans Tamil', sans-serif; font-size: 13px; color: var(--teal); margin-bottom: 2px; }
+  .synonym-example-en { font-size: 12px; color: var(--muted); font-style: italic; }
+
+  /* ── Empty / no results ── */
+  .empty-state {
+    text-align: center;
+    padding: 60px 20px;
+    color: var(--muted);
+  }
+  .empty-state .big { font-size: 48px; margin-bottom: 12px; font-family: 'Noto Serif Tamil', serif; color: var(--border); }
+  .empty-state p { font-size: 15px; }
+
+  /* ── Responsive ── */
+  @media (max-width: 600px) {
+    .hero { padding: 20px; }
+    .hero-text h1 { font-size: 20px; }
+    .detail-body { padding: 16px 18px; }
+    .detail-header { padding: 18px 18px 14px; }
+    .detail-tamil-main { font-size: 28px; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <div class="logo">
+      <span class="logo-tamil">தமிழ் கற்போம்</span>
+      <span class="logo-english">PSLE Tamil — Singapore</span>
+    </div>
+    <div class="search-wrap">
+      <span class="search-icon">⌕</span>
+      <input type="text" id="searchInput" placeholder="Search in Tamil or English... / தமிழில் தேடுங்கள்" oninput="handleSearch(this.value)">
+    </div>
+    <nav>
+      <button class="nav-btn active" onclick="showPage('words')">Words</button>
+      <button class="nav-btn" onclick="showPage('sorporul')">சொற்பொருள்</button>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+  <!-- WORDS PAGE -->
+  <div id="page-words" class="page active">
+    <div class="hero">
+      <div class="hero-text">
+        <h1>சொல் பொருள்</h1>
+        <p>Tamil meanings · Singapore context · PSLE vocabulary</p>
+      </div>
+      <div class="hero-stats">
+        <div class="stat"><div class="stat-n" id="wordCount">10</div><div class="stat-l">Words</div></div>
+        <div class="stat"><div class="stat-n" id="sgCount">3</div><div class="stat-l">Singapore</div></div>
+      </div>
+    </div>
+
+    <div class="filter-bar">
+      <span class="filter-label">Filter</span>
+      <button class="tag-btn active" onclick="filterWords('all', this)">All</button>
+      <button class="tag-btn" onclick="filterWords('sg', this)">🇸🇬 Singapore words</button>
+      <button class="tag-btn" onclick="filterWords('values', this)">Values &amp; character</button>
+      <button class="tag-btn" onclick="filterWords('psle-core', this)">PSLE core</button>
+    </div>
+
+    <div class="word-grid" id="wordGrid"></div>
+  </div>
+
+  <!-- SORPORUL PAGE -->
+  <div id="page-sorporul" class="page">
+    <div class="hero">
+      <div class="hero-text">
+        <h1>சொற்பொருள்</h1>
+        <p>Synonyms with subtle differences explained clearly</p>
+      </div>
+      <div class="hero-stats">
+        <div class="stat"><div class="stat-n">5</div><div class="stat-l">Groups</div></div>
+        <div class="stat"><div class="stat-n">20</div><div class="stat-l">Synonyms</div></div>
+      </div>
+    </div>
+    <div class="sorporul-grid" id="sorporulGrid"></div>
+  </div>
+
+</main>
+
+<!-- WORD DETAIL MODAL -->
+<div class="detail-overlay" id="detailOverlay" onclick="closeDetail(event)">
+  <div class="detail-box" id="detailBox"></div>
+</div>
+
+<script>
+const WORDS = ${JSON.stringify([], null, 0)};
+const SORPORUL = ${JSON.stringify([], null, 0)};
+</script>
+
+<script>
+// ── Data (embedded) ──────────────────────────────────────────────
+const words = [
+  {id:"w001",english_text:"MRT",tamil_text:"நகர் ரயில்",transliteration:"nagar rayil",meaning_tamil:"சிங்கப்பூரில் உள்ள நிலத்தடி மற்றும் மேம்பாலம் ரயில் சேவை",meaning_english:"Mass Rapid Transit — Singapore's underground and elevated train system",sg_context:true,tags:["transport","singapore","daily-life"],examples:[{tamil:"நாங்கள் தினமும் MRT ரயிலில் பள்ளிக்குச் செல்கிறோம்.",english:"We go to school by MRT every day.",difficulty:"easy"},{tamil:"புகைவண்டி நிலையம் மிகவும் நெரிசலாக இருந்தது.",english:"The train station was very crowded.",difficulty:"medium"}]},
+  {id:"w002",english_text:"Zebra crossing",tamil_text:"வரிக்குதிரை கடவை",transliteration:"varikuthirai kadavai",meaning_tamil:"வாகனங்கள் நிறுத்தப்படும்போது மக்கள் சாலையைக் கடக்கும் வரிக்கோடுகள் கொண்ட இடம்",meaning_english:"A marked pedestrian crossing where vehicles must stop",sg_context:true,tags:["transport","singapore","safety"],examples:[{tamil:"வரிக்குதிரை கடவையில் மட்டுமே சாலையைக் கடக்க வேண்டும்.",english:"You must cross the road only at the zebra crossing.",difficulty:"easy"},{tamil:"வாகன ஓட்டிகள் வரிக்குதிரை கடவையில் நடைபயணிகளுக்கு வழிவிட வேண்டும்.",english:"Drivers must give way to pedestrians at the zebra crossing.",difficulty:"medium"}]},
+  {id:"w003",english_text:"Hawker centre",tamil_text:"தின்பண்ட சந்தை",transliteration:"thinpanda sandhai",meaning_tamil:"சிங்கப்பூரில் பல்வேறு உணவு கடைகள் ஒரே இடத்தில் இருக்கும் பொது உணவு மையம்",meaning_english:"An open-air food court with many stalls selling affordable local food",sg_context:true,tags:["food","singapore","culture"],examples:[{tamil:"அம்மா தின்பண்ட சந்தையில் இருந்து சாதம் வாங்கி வந்தார்.",english:"Mum bought rice from the hawker centre.",difficulty:"easy"},{tamil:"சிங்கப்பூரின் தின்பண்ட சந்தைகள் யுனெஸ்கோவால் பாரம்பரியமாக அங்கீகரிக்கப்பட்டுள்ளன.",english:"Singapore's hawker centres have been recognised as heritage by UNESCO.",difficulty:"hard"}]},
+  {id:"w004",english_text:"Friendship",tamil_text:"நட்பு",transliteration:"natpu",meaning_tamil:"இரண்டு அல்லது அதிக நபர்களிடையே உள்ள அன்பான, நம்பகமான உறவு",meaning_english:"A close, trusting and affectionate relationship between people",sg_context:false,tags:["values","relationships","psle-core"],examples:[{tamil:"உண்மையான நட்பு கஷ்ட காலத்தில் தெரியும்.",english:"True friendship is known in times of difficulty.",difficulty:"medium"},{tamil:"அவர்களின் நட்பு பல ஆண்டுகளாக நீடிக்கிறது.",english:"Their friendship has lasted for many years.",difficulty:"easy"}]},
+  {id:"w005",english_text:"Kindness",tamil_text:"இரக்கம்",transliteration:"irakkam",meaning_tamil:"பிறரின் துன்பத்தைக் கண்டு மனம் இளகி உதவும் நல்ல குணம்",meaning_english:"The quality of being caring and helpful to others who are in need",sg_context:false,tags:["values","character","psle-core"],examples:[{tamil:"அவள் இரக்கத்துடன் வயதான பெண்மணிக்கு உதவினாள்.",english:"She helped the elderly woman with kindness.",difficulty:"easy"},{tamil:"இரக்கம் என்பது வார்த்தையில் மட்டுமல்ல, செயலில் காட்ட வேண்டும்.",english:"Kindness must be shown not just in words but in deeds.",difficulty:"medium"}]},
+  {id:"w006",english_text:"Courage",tamil_text:"தைரியம்",transliteration:"thairiyam",meaning_tamil:"அச்சமின்றி சவால்களை எதிர்கொள்ளும் மன உறுதி",meaning_english:"The mental strength to face challenges and difficulties without fear",sg_context:false,tags:["values","character","psle-core"],examples:[{tamil:"தைரியத்துடன் உண்மையைச் சொல்ல வேண்டும்.",english:"One must speak the truth with courage.",difficulty:"easy"},{tamil:"அவன் தைரியமாக நீரில் மூழ்கிய குழந்தையை காப்பாற்றினான்.",english:"He bravely rescued the child who had drowned in the water.",difficulty:"medium"}]},
+  {id:"w007",english_text:"Education",tamil_text:"கல்வி",transliteration:"kalvi",meaning_tamil:"அறிவு, திறன் மற்றும் நற்பண்புகளை வளர்க்கும் கற்றல் செயல்முறை",meaning_english:"The process of gaining knowledge, skills and good values through learning",sg_context:false,tags:["values","learning","psle-core"],examples:[{tamil:"கல்வியே ஒரு மனிதனின் மிகப்பெரிய செல்வம்.",english:"Education is a person's greatest wealth.",difficulty:"easy"},{tamil:"கல்வி மட்டுமல்ல, நல்ல ஒழுக்கமும் வாழ்க்கையில் அவசியம்.",english:"Not just education, but good character is also necessary in life.",difficulty:"medium"}]},
+  {id:"w008",english_text:"Void deck",tamil_text:"காலி மாடி",transliteration:"kaali maadi",meaning_tamil:"சிங்கப்பூர் HDB தொகுதி வீடுகளின் கீழ் மாடியில் உள்ள திறந்த வெளி இடம்",meaning_english:"The open ground floor of Singapore's HDB housing blocks used for community activities",sg_context:true,tags:["singapore","housing","community"],examples:[{tamil:"குழந்தைகள் காலி மாடியில் விளையாடுகிறார்கள்.",english:"Children are playing at the void deck.",difficulty:"easy"},{tamil:"காலி மாடியில் திருமண விழா நடைபெற்றது.",english:"A wedding ceremony took place at the void deck.",difficulty:"medium"}]},
+  {id:"w009",english_text:"Respect",tamil_text:"மரியாதை",transliteration:"mariyaathai",meaning_tamil:"பெரியவர்கள் மற்றும் பிறரை மதிக்கும் நல்ல குணம்",meaning_english:"The quality of treating others with honour and consideration",sg_context:false,tags:["values","character","psle-core"],examples:[{tamil:"பெரியவர்களுக்கு மரியாதை கொடுப்பது நம் கடமை.",english:"It is our duty to show respect to elders.",difficulty:"easy"},{tamil:"மரியாதை கொடுப்பவர்களுக்கே மரியாதை கிடைக்கும்.",english:"Only those who give respect will receive respect.",difficulty:"medium"}]},
+  {id:"w010",english_text:"Perseverance",tamil_text:"விடாமுயற்சி",transliteration:"vidaamuyarchi",meaning_tamil:"தோல்வியிலும் சோர்வடையாமல் தொடர்ந்து முயற்சிக்கும் குணம்",meaning_english:"The quality of continuing to try without giving up even when facing failure",sg_context:false,tags:["values","character","psle-core"],examples:[{tamil:"விடாமுயற்சியே வெற்றியின் சாவி.",english:"Perseverance is the key to success.",difficulty:"easy"},{tamil:"அவள் தோல்வியடைந்தாலும் விடாமுயற்சியுடன் தொடர்ந்து படித்தாள்.",english:"Even after failing, she continued to study with perseverance.",difficulty:"medium"}]}
+];
+
+const sorporul = [
+  {id:"s001",concept_english:"Happiness",concept_tamil:"மகிழ்ச்சி",concept_transliteration:"magizchi",description:"Tamil has many words for happiness — each captures a different shade of the feeling.",synonyms:[{word:"மகிழ்ச்சி",transliteration:"magizchi",meaning:"General happiness or joy — the most common, everyday word",nuance:"Used for any happy occasion, big or small",example_tamil:"பரிசு கிடைத்தது என் மகிழ்ச்சிக்கு காரணம்.",example_english:"Getting the gift was the reason for my happiness."},{word:"ஆனந்தம்",transliteration:"aanandam",meaning:"Deep, elevated bliss — a higher, more profound joy",nuance:"Used for spiritual joy or overwhelming happiness; more formal",example_tamil:"இசை கேட்கும்போது என் மனம் ஆனந்தத்தில் திளைக்கிறது.",example_english:"My mind is immersed in bliss when listening to music."},{word:"சந்தோஷம்",transliteration:"santhosham",meaning:"Cheerful contentment — satisfaction from something good",nuance:"Often used for happiness caused by someone else's good news",example_tamil:"உன் வெற்றி கேட்டு என் மனம் சந்தோஷப்பட்டது.",example_english:"My heart was filled with joy hearing your success."},{word:"உவகை",transliteration:"uvagai",meaning:"Delight from receiving something desired",nuance:"Classical word; implies happiness from getting what you wanted",example_tamil:"பரிசு பெற்று அவன் உவகையுடன் குதித்தான்.",example_english:"He jumped with delight upon receiving the gift."}]},
+  {id:"s002",concept_english:"Sadness",concept_tamil:"துயரம்",concept_transliteration:"thuyaram",description:"Different words for sadness capture the cause and intensity of the emotion.",synonyms:[{word:"துயரம்",transliteration:"thuyaram",meaning:"Deep sorrow or grief — a heavy, lasting sadness",nuance:"Used for serious situations like loss of a loved one",example_tamil:"அவரது மறைவு என் மனதில் துயரத்தை ஏற்படுத்தியது.",example_english:"His passing caused deep sorrow in my heart."},{word:"வருத்தம்",transliteration:"vuruttham",meaning:"Sadness or regret — feeling bad about something",nuance:"Milder; often mixed with guilt or disappointment",example_tamil:"தேர்வில் தோல்வியடைந்தது என் மனதில் வருத்தம் தந்தது.",example_english:"Failing the exam caused sadness in my heart."},{word:"அழுகை",transliteration:"azhugai",meaning:"The act of crying — weeping with tears",nuance:"Refers to the physical act of crying, not the emotion",example_tamil:"குழந்தை அழுகையுடன் அம்மாவை தேடியது.",example_english:"The child searched for its mother while crying."},{word:"கண்ணீர்",transliteration:"kaneer",meaning:"Tears — the physical tears from the eyes",nuance:"Refers to the tears themselves; can be tears of joy too",example_tamil:"அவளின் கண்ணீர் கன்னத்தில் வழிந்தது.",example_english:"Her tears flowed down her cheeks."}]},
+  {id:"s003",concept_english:"Talking / speaking",concept_tamil:"பேசுதல்",concept_transliteration:"pesuthal",description:"How you speak matters — Tamil has precise words for different kinds of speech.",synonyms:[{word:"பேசுதல்",transliteration:"pesuthal",meaning:"To speak or talk — general, everyday conversation",nuance:"Neutral; used for any kind of talking",example_tamil:"ஆசிரியர் வகுப்பில் மாணவர்களிடம் பேசினார்.",example_english:"The teacher spoke with the students in class."},{word:"கூறுதல்",transliteration:"kooruthal",meaning:"To state or declare — saying something clearly and specifically",nuance:"More formal; implies conveying specific information or facts",example_tamil:"அவர் உண்மையை தைரியமாக கூறினார்.",example_english:"He stated the truth with courage."},{word:"உரைத்தல்",transliteration:"uraithal",meaning:"To address or proclaim — speaking to an audience formally",nuance:"Used for speeches, announcements or important declarations",example_tamil:"தலைவர் மக்களிடம் உரையாற்றினார்.",example_english:"The leader addressed the people."},{word:"கதைத்தல்",transliteration:"kathaithal",meaning:"To chat casually — friendly, relaxed talk",nuance:"Informal and warm; used among friends and family",example_tamil:"நண்பர்கள் சேர்ந்து கதைத்துக்கொண்டிருந்தனர்.",example_english:"Friends were chatting together."}]},
+  {id:"s004",concept_english:"Beauty",concept_tamil:"அழகு",concept_transliteration:"azhagu",description:"Beauty in Tamil is described differently depending on what is beautiful and how.",synonyms:[{word:"அழகு",transliteration:"azhagu",meaning:"Beauty — the most common word for anything beautiful",nuance:"General purpose; used for people, places, objects, nature",example_tamil:"இந்த பூங்காவின் அழகு மனதை கவர்கிறது.",example_english:"The beauty of this park captivates the heart."},{word:"இன்பம்",transliteration:"inbam",meaning:"Pleasant delight — beauty that gives pleasure to the senses",nuance:"Implies enjoyment; the beautiful thing gives you a good feeling",example_tamil:"இசை கேட்பதில் பெரும் இன்பம் உள்ளது.",example_english:"There is great pleasure in listening to music."},{word:"நலம்",transliteration:"nalam",meaning:"Inner goodness and wellbeing — beauty of character",nuance:"Refers to inner beauty, virtue, health; not physical appearance",example_tamil:"அவளது மனநலம் அவளை மேலும் அழகாக்குகிறது.",example_english:"Her inner goodness makes her even more beautiful."},{word:"கவின்",transliteration:"kavin",meaning:"Graceful elegance — refined, gentle beauty",nuance:"Classical/poetic word used in Tamil poetry for natural elegance",example_tamil:"மலர்களின் கவின் கண்களை கவர்கிறது.",example_english:"The graceful beauty of flowers attracts the eyes."}]},
+  {id:"s005",concept_english:"Walking / going",concept_tamil:"செல்லுதல்",concept_transliteration:"selluthal",description:"How you move tells a story — Tamil captures the manner and purpose of movement.",synonyms:[{word:"நடத்தல்",transliteration:"nadathal",meaning:"To walk — moving on foot at a normal pace",nuance:"The everyday word for walking; no special meaning attached",example_tamil:"அவன் பள்ளிக்கு நடந்து சென்றான்.",example_english:"He walked to school."},{word:"செல்லுதல்",transliteration:"selluthal",meaning:"To go — moving toward a destination by any means",nuance:"Destination-focused; doesn't specify how you travel",example_tamil:"நாளை நூலகத்திற்கு செல்வோம்.",example_english:"Tomorrow we will go to the library."},{word:"விரைதல்",transliteration:"viraithal",meaning:"To hurry or rush — moving quickly with urgency",nuance:"Implies speed and purpose; used when late or urgent",example_tamil:"மருத்துவமனைக்கு விரைந்து சென்றார்கள்.",example_english:"They rushed to the hospital."},{word:"வருதல்",transliteration:"vuruthal",meaning:"To come — moving toward the speaker's location",nuance:"Direction is toward the speaker; opposite of செல்லுதல்",example_tamil:"அம்மா வீட்டிற்கு வருகிறார்.",example_english:"Mother is coming home."}]}
+];
+
+// ── State ──────────────────────────────────────────────────────────
+let currentFilter = 'all';
+let currentPage = 'words';
+let searchQuery = '';
+
+// ── Render words ───────────────────────────────────────────────────
+function renderWords(data) {
+  const grid = document.getElementById('wordGrid');
+  if (!data.length) {
+    grid.innerHTML = `<div class="empty-state" style="grid-column:1/-1"><div class="big">தேடல்</div><p>No words found. Try a different search.</p></div>`;
+    return;
+  }
+  grid.innerHTML = data.map(w => `
+    <div class="word-card ${w.sg_context ? 'sg' : ''}" onclick="openDetail('${w.id}')">
+      ${w.sg_context ? '<div class="sg-badge">🇸🇬 Singapore</div>' : ''}
+      <div class="word-english">${w.english_text}</div>
+      <div class="word-tamil tamil-serif">${w.tamil_text}</div>
+      <div class="word-roman">${w.transliteration}</div>
+      <div class="word-meaning-preview">${w.meaning_english}</div>
+      <div class="word-tags">${w.tags.map(t => `<span class="word-tag">${t}</span>`).join('')}</div>
+    </div>
+  `).join('');
+}
+
+// ── Render sorporul ────────────────────────────────────────────────
+function renderSorporul(data) {
+  const grid = document.getElementById('sorporulGrid');
+  if (!data.length) {
+    grid.innerHTML = `<div class="empty-state" style="grid-column:1/-1"><div class="big">தேடல்</div><p>No synonym groups found.</p></div>`;
+    return;
+  }
+  grid.innerHTML = data.map(s => `
+    <div class="sorporul-card">
+      <div class="sorporul-header">
+        <div class="sorporul-concept-en">${s.concept_english}</div>
+        <div class="sorporul-concept-ta tamil-serif">${s.concept_tamil}</div>
+        <div class="sorporul-concept-rom">${s.concept_transliteration}</div>
+        <div class="sorporul-desc">${s.description}</div>
+      </div>
+      <div class="sorporul-synonyms">
+        ${s.synonyms.map(syn => `
+          <div class="synonym-row">
+            <div class="synonym-top">
+              <span class="synonym-word tamil-serif">${syn.word}</span>
+              <span class="synonym-rom">${syn.transliteration}</span>
+            </div>
+            <div class="synonym-body">
+              <div class="synonym-meaning">${syn.meaning}</div>
+              <div class="synonym-nuance">${syn.nuance}</div>
+              <div class="synonym-example-ta tamil">${syn.example_tamil}</div>
+              <div class="synonym-example-en">${syn.example_english}</div>
+            </div>
+          </div>
+        `).join('')}
+      </div>
+    </div>
+  `).join('');
+}
+
+// ── Detail modal ───────────────────────────────────────────────────
+function openDetail(id) {
+  const w = words.find(x => x.id === id);
+  if (!w) return;
+  const box = document.getElementById('detailBox');
+  box.innerHTML = `
+    <div class="detail-header">
+      <button class="detail-close" onclick="closeDetailBtn()">✕</button>
+      ${w.sg_context ? '<div class="sg-badge" style="margin-bottom:10px">🇸🇬 Singapore word</div>' : ''}
+      <div class="detail-english">${w.english_text}</div>
+      <div class="detail-tamil-main tamil-serif">${w.tamil_text}</div>
+      <div class="detail-roman">${w.transliteration}</div>
+    </div>
+    <div class="detail-body">
+      <div class="detail-section">
+        <div class="detail-section-label">Meaning</div>
+        <div class="meaning-box">
+          <div class="meaning-tamil tamil">${w.meaning_tamil}</div>
+          <div class="meaning-english">${w.meaning_english}</div>
+        </div>
+        ${w.sg_context ? `
+        <div class="sg-note">
+          <span class="sg-note-icon">🇸🇬</span>
+          <span>This is a Singapore-specific word commonly used in everyday life. Understanding it helps with PSLE composition writing set in Singapore contexts.</span>
+        </div>` : ''}
+      </div>
+      <div class="detail-section">
+        <div class="detail-section-label">Example sentences</div>
+        ${w.examples.map(ex => `
+          <div class="example-item difficulty-${ex.difficulty}">
+            <div class="example-tamil tamil"><span class="difficulty-dot"></span>${ex.tamil}</div>
+            <div class="example-english">${ex.english}</div>
+          </div>
+        `).join('')}
+      </div>
+      <div class="detail-section">
+        <div class="detail-section-label">Topics</div>
+        <div class="word-tags">${w.tags.map(t => `<span class="word-tag">${t}</span>`).join('')}</div>
+      </div>
+    </div>
+  `;
+  document.getElementById('detailOverlay').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeDetail(e) {
+  if (e.target === document.getElementById('detailOverlay')) closeDetailBtn();
+}
+function closeDetailBtn() {
+  document.getElementById('detailOverlay').classList.remove('open');
+  document.body.style.overflow = '';
+}
+document.addEventListener('keydown', e => { if (e.key === 'Escape') closeDetailBtn(); });
+
+// ── Navigation ─────────────────────────────────────────────────────
+function showPage(page) {
+  currentPage = page;
+  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+  document.getElementById('page-' + page).classList.add('active');
+  document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
+  event.target.classList.add('active');
+  applyFilters();
+}
+
+// ── Filtering ──────────────────────────────────────────────────────
+function filterWords(filter, btn) {
+  currentFilter = filter;
+  document.querySelectorAll('.tag-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  applyFilters();
+}
+
+function handleSearch(q) {
+  searchQuery = q.toLowerCase().trim();
+  applyFilters();
+}
+
+function applyFilters() {
+  if (currentPage === 'words') {
+    let data = words;
+    if (currentFilter === 'sg') data = data.filter(w => w.sg_context);
+    else if (currentFilter !== 'all') data = data.filter(w => w.tags.includes(currentFilter));
+    if (searchQuery) {
+      data = data.filter(w =>
+        w.english_text.toLowerCase().includes(searchQuery) ||
+        w.tamil_text.includes(searchQuery) ||
+        w.transliteration.toLowerCase().includes(searchQuery) ||
+        w.meaning_english.toLowerCase().includes(searchQuery) ||
+        w.meaning_tamil.includes(searchQuery)
+      );
+    }
+    renderWords(data);
+  } else {
+    let data = sorporul;
+    if (searchQuery) {
+      data = data.filter(s =>
+        s.concept_english.toLowerCase().includes(searchQuery) ||
+        s.concept_tamil.includes(searchQuery) ||
+        s.concept_transliteration.toLowerCase().includes(searchQuery) ||
+        s.synonyms.some(syn =>
+          syn.word.includes(searchQuery) ||
+          syn.transliteration.toLowerCase().includes(searchQuery) ||
+          syn.meaning.toLowerCase().includes(searchQuery)
+        )
+      );
+    }
+    renderSorporul(data);
+  }
+}
+
+// ── Init ───────────────────────────────────────────────────────────
+document.getElementById('wordCount').textContent = words.length;
+document.getElementById('sgCount').textContent = words.filter(w => w.sg_context).length;
+renderWords(words);
+renderSorporul(sorporul);
+</script>
+</body>
+</html>

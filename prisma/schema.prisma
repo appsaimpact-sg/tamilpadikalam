@@ -1,0 +1,32 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model Word {
+  id              String   @id @default(cuid())
+  english_text    String
+  tamil_text      String
+  transliteration String
+  meaning_tamil   String
+  meaning_english String
+  sg_context      Boolean  @default(false)
+  tags            String
+  synonyms        String
+  examples        String
+  created_at      DateTime @default(now())
+}
+
+model Sorporul {
+  id                      String   @id @default(cuid())
+  concept_english         String
+  concept_tamil           String
+  concept_transliteration String
+  description             String
+  synonyms                String
+  created_at              DateTime @default(now())
+}

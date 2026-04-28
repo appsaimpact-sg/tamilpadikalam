@@ -1,0 +1,207 @@
+[
+  {
+    "id": "s001",
+    "concept_english": "happiness",
+    "concept_tamil": "மகிழ்ச்சி",
+    "concept_transliteration": "magizchi",
+    "description": "Tamil has many words for happiness — each captures a different shade of the feeling.",
+    "synonyms": [
+      {
+        "word": "மகிழ்ச்சி",
+        "transliteration": "magizchi",
+        "meaning": "General happiness or joy — the most common, everyday word",
+        "nuance": "Used for any happy occasion, big or small",
+        "example_tamil": "பரிசு கிடைத்தது என் மகிழ்ச்சிக்கு காரணம்.",
+        "example_english": "Getting the gift was the reason for my happiness."
+      },
+      {
+        "word": "ஆனந்தம்",
+        "transliteration": "aanandam",
+        "meaning": "Deep, elevated bliss — a higher, more profound joy",
+        "nuance": "Used for spiritual joy or overwhelming happiness; more formal",
+        "example_tamil": "இசை கேட்கும்போது என் மனம் ஆனந்தத்தில் திளைக்கிறது.",
+        "example_english": "My mind is immersed in bliss when listening to music."
+      },
+      {
+        "word": "சந்தோஷம்",
+        "transliteration": "santhosham",
+        "meaning": "Cheerful contentment — satisfaction from something good happening",
+        "nuance": "Often used for happiness caused by someone else's good news; warm feeling",
+        "example_tamil": "உன் வெற்றி கேட்டு என் மனம் சந்தோஷப்பட்டது.",
+        "example_english": "My heart was filled with joy hearing your success."
+      },
+      {
+        "word": "உவகை",
+        "transliteration": "uvagai",
+        "meaning": "Delight from receiving something desired",
+        "nuance": "Classical word; implies happiness from getting what you wanted",
+        "example_tamil": "பரிசு பெற்று அவன் உவகையுடன் குதித்தான்.",
+        "example_english": "He jumped with delight upon receiving the gift."
+      }
+    ]
+  },
+  {
+    "id": "s002",
+    "concept_english": "sadness / crying",
+    "concept_tamil": "துயரம்",
+    "concept_transliteration": "thuyaram",
+    "description": "Different words for sadness and tears capture the cause and intensity of the emotion.",
+    "synonyms": [
+      {
+        "word": "துயரம்",
+        "transliteration": "thuyaram",
+        "meaning": "Deep sorrow or grief — a heavy, lasting sadness",
+        "nuance": "Used for serious situations like loss of a loved one",
+        "example_tamil": "அவரது மறைவு என் மனதில் துயரத்தை ஏற்படுத்தியது.",
+        "example_english": "His passing caused deep sorrow in my heart."
+      },
+      {
+        "word": "வருத்தம்",
+        "transliteration": "vuruttham",
+        "meaning": "Sadness or regret — feeling bad about something",
+        "nuance": "Milder than துயரம்; often mixed with guilt or disappointment",
+        "example_tamil": "தேர்வில் தோல்வியடைந்தது என் மனதில் வருத்தம் தந்தது.",
+        "example_english": "Failing the exam caused sadness in my heart."
+      },
+      {
+        "word": "அழுகை",
+        "transliteration": "azhugai",
+        "meaning": "The act of crying — weeping with tears",
+        "nuance": "Refers to the physical act of crying, not the emotion itself",
+        "example_tamil": "குழந்தை அழுகையுடன் அம்மாவை தேடியது.",
+        "example_english": "The child searched for its mother while crying."
+      },
+      {
+        "word": "கண்ணீர்",
+        "transliteration": "kaneer",
+        "meaning": "Tears — the physical tears from the eyes",
+        "nuance": "Refers specifically to the tears themselves; can be tears of joy too",
+        "example_tamil": "அவளின் கண்ணீர் கன்னத்தில் வழிந்தது.",
+        "example_english": "Her tears flowed down her cheeks."
+      }
+    ]
+  },
+  {
+    "id": "s003",
+    "concept_english": "talking / speaking",
+    "concept_tamil": "பேசுதல்",
+    "concept_transliteration": "pesuthal",
+    "description": "How you speak matters — Tamil has precise words for different kinds of speech.",
+    "synonyms": [
+      {
+        "word": "பேசுதல்",
+        "transliteration": "pesuthal",
+        "meaning": "To speak or talk — general, everyday conversation",
+        "nuance": "Neutral; used for any kind of talking",
+        "example_tamil": "ஆசிரியர் வகுப்பில் மாணவர்களிடம் பேசினார்.",
+        "example_english": "The teacher spoke with the students in class."
+      },
+      {
+        "word": "கூறுதல்",
+        "transliteration": "kooruthal",
+        "meaning": "To state or declare something — saying something clearly",
+        "nuance": "More formal; implies conveying specific information or facts",
+        "example_tamil": "அவர் உண்மையை தைரியமாக கூறினார்.",
+        "example_english": "He stated the truth with courage."
+      },
+      {
+        "word": "உரைத்தல்",
+        "transliteration": "uraithal",
+        "meaning": "To address or proclaim — speaking to an audience formally",
+        "nuance": "Used for speeches, announcements or important declarations",
+        "example_tamil": "தலைவர் மக்களிடம் உரையாற்றினார்.",
+        "example_english": "The leader addressed the people."
+      },
+      {
+        "word": "கதைத்தல்",
+        "transliteration": "kathaithal",
+        "meaning": "To chat or converse casually — friendly, relaxed talk",
+        "nuance": "Informal and warm; used among friends and family",
+        "example_tamil": "நண்பர்கள் சேர்ந்து கதைத்துக்கொண்டிருந்தனர்.",
+        "example_english": "Friends were chatting together."
+      }
+    ]
+  },
+  {
+    "id": "s004",
+    "concept_english": "beauty",
+    "concept_tamil": "அழகு",
+    "concept_transliteration": "azhagu",
+    "description": "Beauty in Tamil is described differently depending on what is beautiful and how.",
+    "synonyms": [
+      {
+        "word": "அழகு",
+        "transliteration": "azhagu",
+        "meaning": "Beauty — the most common word, used for anything beautiful",
+        "nuance": "General purpose; used for people, places, objects, nature",
+        "example_tamil": "இந்த பூங்காவின் அழகு மனதை கவர்கிறது.",
+        "example_english": "The beauty of this park captivates the heart."
+      },
+      {
+        "word": "இன்பம்",
+        "transliteration": "inbam",
+        "meaning": "Pleasant delight — beauty that gives pleasure to the senses",
+        "nuance": "Implies enjoyment; the beautiful thing gives you a good feeling",
+        "example_tamil": "இசை கேட்பதில் பெரும் இன்பம் உள்ளது.",
+        "example_english": "There is great pleasure in listening to music."
+      },
+      {
+        "word": "நலம்",
+        "transliteration": "nalam",
+        "meaning": "Goodness and beauty of character — inner beauty and wellbeing",
+        "nuance": "Refers to inner beauty, virtue, health; not physical appearance",
+        "example_tamil": "அவளது மனநலம் அவளை மேலும் அழகாக்குகிறது.",
+        "example_english": "Her inner goodness makes her even more beautiful."
+      },
+      {
+        "word": "கவின்",
+        "transliteration": "kavin",
+        "meaning": "Graceful elegance — refined, gentle beauty",
+        "nuance": "Classical/poetic word; used in Tamil poetry for natural elegance",
+        "example_tamil": "மலர்களின் கவின் கண்களை கவர்கிறது.",
+        "example_english": "The graceful beauty of flowers attracts the eyes."
+      }
+    ]
+  },
+  {
+    "id": "s005",
+    "concept_english": "walking / going",
+    "concept_tamil": "செல்லுதல்",
+    "concept_transliteration": "selluthal",
+    "description": "How you move tells a story — Tamil captures the manner and purpose of movement.",
+    "synonyms": [
+      {
+        "word": "நடத்தல்",
+        "transliteration": "nadathal",
+        "meaning": "To walk — moving on foot at a normal pace",
+        "nuance": "The everyday word for walking; no special meaning attached",
+        "example_tamil": "அவன் பள்ளிக்கு நடந்து சென்றான்.",
+        "example_english": "He walked to school."
+      },
+      {
+        "word": "செல்லுதல்",
+        "transliteration": "selluthal",
+        "meaning": "To go — moving toward a destination (any means)",
+        "nuance": "Destination-focused; doesn't specify how you travel",
+        "example_tamil": "நாளை சிங்கப்பூர் நூலகத்திற்கு செல்வோம்.",
+        "example_english": "Tomorrow we will go to the Singapore library."
+      },
+      {
+        "word": "விரைதல்",
+        "transliteration": "viraithal",
+        "meaning": "To hurry or rush — moving quickly with urgency",
+        "nuance": "Implies speed and purpose; used when late or urgent",
+        "example_tamil": "மருத்துவமனைக்கு விரைந்து சென்றார்கள்.",
+        "example_english": "They rushed to the hospital."
+      },
+      {
+        "word": "வருதல்",
+        "transliteration": "vuruthal",
+        "meaning": "To come — moving toward the speaker's location",
+        "nuance": "Direction is toward the person speaking, opposite of செல்லுதல்",
+        "example_tamil": "அம்மா வீட்டிற்கு வருகிறார்.",
+        "example_english": "Mother is coming home."
+      }
+    ]
+  }
+]
