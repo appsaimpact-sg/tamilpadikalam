@@ -1,3 +1,5 @@
+export const dynamic = 'force-dynamic'
+
 import { SignJWT } from 'jose';
 import { cookies } from 'next/headers';
 import { NextRequest, NextResponse } from 'next/server';

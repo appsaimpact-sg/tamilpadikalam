@@ -1,3 +1,5 @@
+export const dynamic = 'force-dynamic'
+
 import { getAdminSession } from '@/src/lib/auth';
 import { NextResponse } from 'next/server';
 
